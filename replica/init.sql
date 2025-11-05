@@ -18,4 +18,7 @@ GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';
 CREATE USER IF NOT EXISTS 'replicuser'@'%' IDENTIFIED BY 'grupof.pass';
 GRANT SELECT ON `aula-db`.* TO 'replicuser'@'%';
 
+SET GLOBAL read_only=ON;
+SET GLOBAL super_read_only=ON;
+
 FLUSH PRIVILEGES;
